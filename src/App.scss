@@ -1,0 +1,91 @@
+:root {
+  --primary-color:                #7165ff;
+  --primary-bg-color:             #a5e4ff;
+  --secondary-bg-color:           #f6f6f6;
+  --border-bg-color:              #{rgba(0, 0, 0, .1)};
+
+  --coin-color:                   #ffc547;
+  --coin-bg-color:                #{rgba(255, 197, 71, .2)};
+  --searchbar-bg-color:           #f6f6f6;
+
+  --heading-card-shadow:          0 0 10px 0 rgba(0, 0, 0, 0.1);
+
+  --spacing-1:                    4px;
+  --spacing-2:                    8px;
+  --spacing-3:                    12px;
+  --spacing-4:                    16px;
+  --spacing-5:                    20px;
+  --spacing-6:                    24px;
+  --spacing-7:                    28px;
+  --spacing-8:                    32px;
+  --spacing-9:                    36px;
+  --spacing-10:                   40px;
+
+  --border-radius-xs:             2px;
+  --border-radius-sm:             4px;
+  --border-radius-md:             6px;
+  --border-radius-lg:             8px;
+  --border-radius-xl:             10px;
+  --border-radius-xxl:            12px;
+
+  --opacity-light:                0.4;
+  --opacity-medium:               0.6;
+
+  --font-weight-light:            300;
+  --font-weight-medium:           500;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+
+@import "styles/display";
+
+@import "styles/components/header";
+@import "styles/components/sidebar";
+@import "styles/components/heading-card";
+@import "styles/components/core-value";
+@import "styles/components/feedback";
+@import "styles/components/sharing-with";
+
+@import "styles/dashboard";
+
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  font-family: Poppins;
+  font-size: var(--spacing-4);
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+
+.header-bg {
+  height: 172px;
+  width: 100%;
+  background-color: var(--primary-bg-color);
+}
+
+.description-class {
+  margin-top: var(--spacing-2);
+  opacity: var(--opacity-medium);
+  font-weight: var(--font-weight-light);
+}
+
+.main-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  max-width: 648px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.App {
+  text-align: left;
+}
