@@ -1,0 +1,79 @@
+.header {
+  padding: var(--spacing-4) var(--spacing-8);
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.App-logo {
+  pointer-events: none;
+}
+
+.searchbar-wrapper {
+  margin-left: var(--spacing-7);
+  padding: var(--spacing-2) var(--spacing-3);
+  background-color: var(--searchbar-bg-color);
+  border-radius: var(--border-radius-xxl);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  .search-icon {
+    margin-right: var(--spacing-3);
+    color: var(--primary-color);
+  }
+
+  .search-text {
+    padding: 0;
+    font-size: var(--spacing-4);
+    line-height: 1.5;
+    border: transparent !important;
+    background-color: transparent !important;
+    font-weight: var(--font-weight-light);
+    width: 300px;
+  }
+}
+
+.coin-badge {
+  padding: calc(var(--spacing-1) * .5);
+  padding-right: 10px;
+  background: var(--coin-bg-color);
+  border-radius: 30px;
+
+  .coin-icon {
+    padding-right: var(--spacing-1);
+
+    & > svg {
+      color: var(--coin-color);
+    }
+  }
+
+  .coin-count {
+    font-size: var(--spacing-3);
+  }
+}
+
+.notification-icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto var(--spacing-7);
+}
+
+.user-info-wrapper {
+  .user-img {
+    height: var(--spacing-9);
+    width: var(--spacing-9);
+    margin-right: var(--spacing-3);
+  }
+
+  .user-name {
+
+  }
+}
