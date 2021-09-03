@@ -1,0 +1,18 @@
+@mixin raised-card-styling {
+  display: flex;
+  flex-direction: column;
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--heading-card-shadow);
+  z-index: 95;
+  background-color: white;
+  margin: -44px 0 var(--spacing-8);
+}
+
+@mixin surface-card-styling {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-6);
+  margin-bottom: var(--spacing-5);
+  border: solid 1px var(--border-bg-color);
+  border-radius: var(--border-radius-xxl);
+}

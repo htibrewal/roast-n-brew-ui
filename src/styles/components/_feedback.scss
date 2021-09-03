@@ -1,0 +1,37 @@
+.feedback-card-wrapper {
+  @include surface-card-styling;
+}
+
+.given-by-wrapper {
+  margin-bottom: var(--spacing-5);
+
+  .giver-img {
+    height: 46px;
+    width: 46px;
+    margin-right: var(--spacing-2);
+  }
+
+  .given-at {
+    font-size: var(--spacing-3);
+    opacity: var(--opacity-light);
+    font-weight: var(--font-weight-light);
+  }
+}
+
+.feedback-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-weight: var(--font-weight-light);
+
+  .feedback-type {
+    font-size: var(--spacing-3);
+    opacity: var(--opacity-light);
+    margin-bottom: var(--spacing-1);
+  }
+
+  .feedback-message {
+    margin-bottom: var(--spacing-5);
+  }
+}
+

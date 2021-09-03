@@ -24,11 +24,6 @@
   align-items: center;
   justify-content: flex-start;
 
-  .search-icon {
-    margin-right: var(--spacing-3);
-    color: var(--primary-color);
-  }
-
   .search-text {
     padding: 0;
     font-size: var(--spacing-4);
@@ -46,14 +41,6 @@
   background: var(--coin-bg-color);
   border-radius: 30px;
 
-  .coin-icon {
-    padding-right: var(--spacing-1);
-
-    & > svg {
-      color: var(--coin-color);
-    }
-  }
-
   .coin-count {
     font-size: var(--spacing-3);
   }
@@ -67,6 +54,14 @@
 }
 
 .user-info-wrapper {
+  text-decoration: inherit;
+  color: inherit;
+
+  &:hover,
+  &:focus {
+    border-color: transparent;
+  }
+
   .user-img {
     height: var(--spacing-9);
     width: var(--spacing-9);
@@ -74,6 +69,5 @@
   }
 
   .user-name {
-
   }
 }

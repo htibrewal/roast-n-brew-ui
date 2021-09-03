@@ -1,0 +1,19 @@
+.core-value-card {
+  display: flex;
+  align-items: center;
+  margin-right: var(--spacing-4);
+  margin-bottom: var(--spacing-2);
+
+  .core-value-icon {
+    height: var(--spacing-6);
+    width: var(--spacing-6);
+    margin-right: var(--spacing-2);
+  }
+
+  .core-value-text {
+    font-size: var(--spacing-3);
+    opacity: var(--opacity-light);
+    font-weight: 500;
+  }
+}
+

@@ -3,10 +3,13 @@
   --primary-bg-color:             #a5e4ff;
   --secondary-bg-color:           #f6f6f6;
   --border-bg-color:              #{rgba(0, 0, 0, .1)};
+  --button-border-color:          #{rgba(0, 0, 0, .3)};
 
   --coin-color:                   #ffc547;
   --coin-bg-color:                #{rgba(255, 197, 71, .2)};
   --searchbar-bg-color:           #f6f6f6;
+
+  --marketplace-coin-color:       #ff833e;
 
   --heading-card-shadow:          0 0 10px 0 rgba(0, 0, 0, 0.1);
 
@@ -38,16 +41,23 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
 
-@import "styles/display";
+@import "styles/utility/display";
+@import "styles/utility/mixins";
 
-@import "styles/components/header";
 @import "styles/components/sidebar";
 @import "styles/components/heading-card";
 @import "styles/components/core-value";
 @import "styles/components/feedback";
-@import "styles/components/sharing-with";
+@import "styles/components/button";
 
+@import "styles/login";
+@import "styles/setup-profile";
 @import "styles/dashboard";
+
+@import "styles/share-feedback";
+@import "styles/header";
+@import "styles/profile";
+@import "styles/market-place";
 
 
 html {
@@ -63,6 +73,7 @@ body {
   font-size: var(--spacing-4);
   line-height: 1.5;
   font-weight: 600;
+  text-align: left;
 }
 
 
@@ -81,11 +92,7 @@ body {
 .main-content-wrapper {
   display: flex;
   flex-direction: column;
-  max-width: 648px;
-  width: 100%;
+  max-width: 100%;
+  width: 648px;
   margin: 0 auto;
-}
-
-.App {
-  text-align: left;
 }

@@ -1,0 +1,27 @@
+.sharing-with-wrapper {
+  @include surface-card-styling;
+  justify-content: center;
+}
+
+.form-switch {
+  margin-right: calc(var(--spacing-6) * 2);
+}
+
+.text-field-wrapper + .text-field-wrapper {
+  margin-top: var(--spacing-5);
+}
+
+.core-value-check-wrapper {
+  display: flex;
+  align-items: center;
+
+  + .core-value-check-wrapper {
+    margin-top: var(--spacing-5);
+  }
+
+  .core-value-check-wrapper__icon {
+    margin: 0 var(--spacing-3);
+    height: var(--spacing-10);
+    width: var(--spacing-10);
+  }
+}

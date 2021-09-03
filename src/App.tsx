@@ -1,25 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './App.scss';
+import Dashboard from './components/dashboard/dashboard';
+import Login from './components/login/login';
+import { Redirect, Route, Switch } from 'react-router-dom';
+import SetupProfile from './components/setup-profile/setup-profile';
+import PrivateRoutes from './routers/PrivateRoutes';
+import PublicRoutes from './routers/PublicRoutes';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Switch>
+      <PrivateRoutes path="/dashboard" component={Dashboard} />
+
+      <PrivateRoutes path="/setup-account" component={SetupProfile} />
+
+      <PublicRoutes exact path="/login" component={Login} />
+
+      {/*<PublicRoutes path="/google-login" component={GoogleLoginProgress} />*/}
+
+      <Route render={() => <Redirect to='/dashboard' />} />
+    </Switch>
   );
 }
 

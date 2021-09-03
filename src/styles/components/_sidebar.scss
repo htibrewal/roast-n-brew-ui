@@ -11,6 +11,18 @@
   display: flex;
   align-items: center;
   padding: 0 var(--spacing-3);
+  cursor: pointer;
+  opacity: var(--opacity-medium);
+  color: inherit;
+  text-decoration: inherit;
+
+  &:hover,
+  &:focus {
+    &:not(.active) {
+      border-color: transparent;
+      opacity: var(--opacity-medium);
+    }
+  }
 
   &.active {
     color: var(--primary-color);
@@ -20,11 +32,6 @@
     .sidebar-link-icon {
       opacity: 1;
     }
-  }
-
-  .sidebar-link-text,
-  .sidebar-link-icon {
-    opacity: var(--opacity-medium);
   }
 
   .sidebar-link-text {

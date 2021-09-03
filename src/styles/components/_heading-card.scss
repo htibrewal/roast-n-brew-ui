@@ -1,0 +1,4 @@
+.heading-card-wrapper {
+  @include raised-card-styling;
+  padding: var(--spacing-5) var(--spacing-6);
+}
