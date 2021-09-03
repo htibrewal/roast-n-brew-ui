@@ -1,14 +1,25 @@
 import { Box, FormGroup } from '@material-ui/core';
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../button/button';
 import HeadingCard from '../heading-card/heading-card';
 import AnythingElse from './anything-else';
+import ConfirmModal from './confirm-modal';
 import CoreValuesCheckbox from './core-values-checkbox';
 import SharingWith from './sharing-with';
 import SwitchLabel from '../switch/switch';
 import StartDoing from './start-doing';
 
 const ShareFeedback = () => {
+  const [open, setOpen] = useState(false);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <>
       <HeadingCard
@@ -45,8 +56,9 @@ const ShareFeedback = () => {
       <CoreValuesCheckbox />
 
       <Box mt={2} mb={5} ml='auto' mr='auto'>
-        <Button text='Send Feedback' />
+        <Button text='Send Feedback' onClick={handleOpen} />
       </Box>
+      <ConfirmModal open={open} handleClose={handleClose} />
     </>
   )
 }

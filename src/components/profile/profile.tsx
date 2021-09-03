@@ -34,7 +34,6 @@ const Profile = () => {
     }
   });
 
-
   //
   // useEffect( () => {
   //   // (async function() {
@@ -73,17 +72,17 @@ const Profile = () => {
       <Switch>
         <PrivateRoutes
           path={`${path}/about`}
-          component={<About {...profileData} />}
+          component={() => <About data={profileData} />}
         />
 
         <PrivateRoutes
           path={`${path}/received`}
-          component={ShareFeedback}
+          component={() => <></>}
         />
 
         <PrivateRoutes
           path={`${path}/given`}
-          component={ShareFeedback}
+          component={() => <></>}
         />
 
         <Route render={() => <Redirect to={`${path}/about`} />} />

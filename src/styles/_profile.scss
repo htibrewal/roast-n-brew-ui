@@ -74,6 +74,8 @@
   .user-info-link {
     opacity: var(--opacity-medium);
     cursor: pointer;
+    text-decoration: inherit;
+    color: inherit;
 
     &.active {
       color: var(--primary-color);

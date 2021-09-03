@@ -3,7 +3,6 @@ import { CORE_VALUES } from '../../constants';
 import CoreValueCard from './core-value-card';
 
 export default function About({ data }: any) {
-  console.log(data);
 
   return (
     <>
