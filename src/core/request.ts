@@ -1,20 +1,16 @@
-const BASE_URL = 'http://localhost:9000/coffee';
-
 export const NetworkRequest = async (
   method: string,
   url: string,
   params: any
 ) => {
   try {
-    const preparedUrl = BASE_URL + url;
-    const rawData: any = await fetch(preparedUrl, {
+    const rawData: any = await fetch(url, {
       method,
       body: params && JSON.stringify(params),
       headers: {
         'Content-Type': 'application/json'
       },
     });
-    console.log(rawData);
 
     // if (rawData.status === 400) {
     //   const jsonData = await rawData.json();
@@ -58,10 +54,6 @@ export const NetworkRequest = async (
 
     throw new Error(jsonData.error_message);
   } catch (error: any) {
-    // if (error.name === 'AbortError') {
-    //   return { type: requestState };
-    // }
-
     return { payload: error.message };
   }
 };

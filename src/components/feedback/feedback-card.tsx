@@ -1,22 +1,22 @@
 import React from 'react';
-import { CORE_VALUES } from '../../constants';
 import CoreValueCards from './core-value-cards';
 import FeedbackContent from './feedback-content';
 import FeedbackBy from './feedback-given-by';
 
-const Feedback = () => {
-  const startMessage = "kudos @Trilok, for always being there and making sure we get all the help " +
-    "& guidance that's needed. For helping us in getting unblocked, and making sure things move!"
-
+const Feedback = ({
+  giverInfo,
+  coreValues,
+  content
+}: any) => {
   return (
     <div className='feedback-card-wrapper'>
-      <FeedbackBy />
+      <FeedbackBy {...giverInfo} />
 
-      <FeedbackContent title='Start Doing' message={startMessage} />
+      {Object.entries(content).map(([title, message]: [string, any]) => (
+        <FeedbackContent title={ title } message={ message } />
+      ))}
 
-      <FeedbackContent title='Stop Doing' message={startMessage} />
-
-      <CoreValueCards cards={CORE_VALUES} />
+      <CoreValueCards cards={coreValues} />
     </div>
   )
 }

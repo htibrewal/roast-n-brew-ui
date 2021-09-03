@@ -1,0 +1,11 @@
+.feed-share-header {
+  @include raised-card-styling;
+  flex-direction: row;
+  align-items: center;
+  padding: var(--spacing-5);
+
+  .feed-share-header__text {
+    opacity: var(--opacity-light);
+    margin-right: var(--spacing-10);
+  }
+}

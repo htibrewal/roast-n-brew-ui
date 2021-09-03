@@ -1,9 +1,11 @@
 import React from 'react';
-import { Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import PrivateRoutes from '../../routers/PrivateRoutes';
+import Feed from '../feed/feed';
 import HeaderBg from '../header-bg';
 import Marketplace from '../marketplace/marketplace';
 import Profile from '../profile/profile';
+import RequestFeedback from '../request-feedback/request-feedback';
 import ShareFeedback from '../share-feedback/share-feedback';
 import Header from './header/header';
 import Sidebar from './sidebar';
@@ -23,7 +25,7 @@ const Dashboard = () => {
           <Switch>
             <PrivateRoutes
               path={`${path}/feed`}
-              component={Marketplace}
+              component={Feed}
             />
 
             <PrivateRoutes
@@ -33,7 +35,7 @@ const Dashboard = () => {
 
             <PrivateRoutes
               path={`${path}/request-feedback`}
-              component={ShareFeedback}
+              component={RequestFeedback}
             />
 
             <PrivateRoutes

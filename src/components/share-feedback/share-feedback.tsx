@@ -30,11 +30,17 @@ const ShareFeedback = () => {
         </FormGroup>
       </Box>
 
-      <SharingWith />
+      <SharingWith
+        title='Whom do you want to talk about?'
+        description='Select the person/team name that you want to share feedback'
+      />
 
       <StartDoing />
 
-      <AnythingElse />
+      <AnythingElse
+        title='Anything else?'
+        description='Do you want to add anything extra?'
+      />
 
       <CoreValuesCheckbox />
 

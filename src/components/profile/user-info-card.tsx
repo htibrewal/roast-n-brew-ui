@@ -2,10 +2,10 @@ import React from 'react';
 import location from '../../icons/location.svg';
 import start from '../../icons/start.svg';
 
-const UserInfoCard = (data: any) => {
+const UserInfoCard = ({ data }: any) => {
   const getName = (data: any) => {
     const name = data.first_name + (
-      data.last_name ? data.last_name : ''
+      data.last_name ? ` ${data.last_name}` : ''
     );
 
     return name;
@@ -58,7 +58,7 @@ const UserInfoCard = (data: any) => {
           </span>
 
           <span className='card-user-numbers__value'>
-            32
+            2132
           </span>
         </span>
 

@@ -1,100 +1,93 @@
-import React, { useEffect, useState } from 'react';
-import { CORE_VALUES } from '../../constants';
-import { NetworkRequest } from '../../core/request';
-import CoreValueCard from './core-value-card';
+import React, { useState } from 'react';
+import { NavLink, Redirect, Route, Switch, useRouteMatch } from 'react-router-dom';
+import PrivateRoutes from '../../routers/PrivateRoutes';
+import ShareFeedback from '../share-feedback/share-feedback';
+import About from './about';
 import UserInfoCard from './user-info-card';
 
 
 const Profile = () => {
-  const [profileData, setProfileData] = useState<any>({});
+  const { path } = useRouteMatch();
 
-  useEffect( () => {
-    // (async function() {
-    //   const data = await NetworkRequest('GET', '/users/9', {});
-    //   setProfileData(data);
-    // })();
+  const [profileData, setProfileData] = useState<any>({
+    id: 9,
+    email_id: "naruto@leafmail.com",
+    first_name: "Akhil",
+    last_name: "Krishnan",
+    image_url: "https://play-lh.googleusercontent.com/tWOCFum34rKMnhBEQJLHHjRV6qQdlwDCdn4YIY5Yly9LIcuqdtdiGmeWq7XHnmekEC2z",
+    designation: "Principal Product Designer ",
+    location: "Bangalore, Karnataka",
+    bio: "Principal Product Designer. Articulating the Why and How behind everyday things. Judge a book by it’s Cover",
+    can_talk_about: [
+      "Design",
+      "Gadgets",
+      "Movies"
+    ],
+    cannot_talk_about: [
+      "Shiv",
+      "Documentary"
+    ],
+    coins_balance: 4372,
+    card_counts: {
+      "HONESTY": 1,
+      "BEST_AT_WHAT_YOU_DO": 1
+    }
+  });
 
-    fetch('/users/9', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json'
-      }
-    })
-      .then(res => res.json())
-      .then(
-        (result) => {
-          console.log(result);
-        }
-      )
-  }, []);
+
+  //
+  // useEffect( () => {
+  //   // (async function() {
+  //   //   const data = await NetworkRequest('GET', '/users/9', {});
+  //   //   setProfileData(data);
+  //   // })();
+  //
+  //   fetch('/users/9', {
+  //     method: 'GET',
+  //     headers: {
+  //       'Content-Type': 'application/json'
+  //     }
+  //   })
+  //     .then(res => res.json())
+  //     .then((body) => setProfileData(body.data));
+  // }, []);
 
   return (
     <>
       <UserInfoCard data={profileData} />
 
       <div className='user-info-links'>
-        <a className='user-info-link'>
+        <NavLink to={`${path}/about`} className='user-info-link' activeClassName='active'>
           About
-        </a>
+        </NavLink>
 
-        <a className='user-info-link'>
+        <NavLink to={`${path}/received`} className='user-info-link' activeClassName='active'>
           Received
-        </a>
+        </NavLink>
 
-        <a className='user-info-link'>
+        <NavLink to={`${path}/given`} className='user-info-link' activeClassName='active'>
           Given
-        </a>
+        </NavLink>
       </div>
 
-      {/* About */}
-      <div className='user-profile-card'>
-        <span>
-          About
-        </span>
+      <Switch>
+        <PrivateRoutes
+          path={`${path}/about`}
+          component={<About {...profileData} />}
+        />
 
-        <span className='user-profile-card__about'>
-          { profileData.bio }
-        </span>
-      </div>
+        <PrivateRoutes
+          path={`${path}/received`}
+          component={ShareFeedback}
+        />
 
-      {/* Core values */}
-      <div className='user-profile-card'>
-        <div className='d-flex flex-wrap'>
-          {CORE_VALUES.map((card) => (
-            <CoreValueCard {...card} />
-          ))}
-        </div>
-      </div>
+        <PrivateRoutes
+          path={`${path}/given`}
+          component={ShareFeedback}
+        />
 
-      {/* Talk about */}
-      <div className='user-profile-card'>
-        <span>
-          Talk to me about
-        </span>
-
-        {/*<div className='user-profile-card__badges'>
-          {profileData.can_talk_about.map((about: string) => (
-            <span className='user-profile-card__badge'>
-              {about}
-            </span>
-          ))}
-        </div>*/}
-      </div>
-
-      {/* Dont talk about */}
-      <div className='user-profile-card'>
-        <span>
-          Don’t talk to me about
-        </span>
-
-        {/*<div className='user-profile-card__badges'>
-          {profileData.cannot_talk_about.map((about: string) => (
-            <span className='user-profile-card__badge'>
-              {about}
-            </span>
-          ))}
-        </div>*/}
-      </div>
+        <Route render={() => <Redirect to={`${path}/about`} />} />
+      </Switch>
     </>
   )
 }

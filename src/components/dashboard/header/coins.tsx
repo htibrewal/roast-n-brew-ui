@@ -20,7 +20,7 @@ const Coins = () => {
       <SvgIcon component={Coin} className={classes.coinIcon} />
 
       <span className='coin-count'>
-        43257
+        4372
       </span>
     </div>
   )

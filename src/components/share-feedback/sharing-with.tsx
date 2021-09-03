@@ -1,22 +1,34 @@
 import { Box, TextField } from '@material-ui/core';
 import { Autocomplete } from '@material-ui/lab';
 import React from 'react';
+import { HeadingCardI } from '../../interfaces/heading-card-interface';
 
-const SharingWith = () => {
+const SharingWith = ({ title, description }: HeadingCardI) => {
+  const options = [
+    '#Dev',
+    '#Docs',
+    '#Sales',
+    '@Srishti Sharma',
+    '@Jayesh Asrani',
+    '@Shiv Santosh',
+    '@Akhil Krishnan',
+    '@Harsh Tibrewal',
+  ]
+
   return (
     <div className='sharing-with-wrapper'>
       <span>
-        Whom do you want to talk about?
+        { title }
       </span>
 
       <Box mb={2.5} mt={1}>
         <span className='description-class'>
-          Select the person / team name that you want to share feedback
+          { description }
         </span>
       </Box>
 
       <Autocomplete
-        options={[]}
+        options={options}
         renderInput={(params) => (
           <TextField
             {...params}

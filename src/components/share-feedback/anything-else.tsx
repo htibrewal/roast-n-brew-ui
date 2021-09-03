@@ -1,17 +1,18 @@
 import { Box } from '@material-ui/core';
 import React from 'react';
+import { HeadingCardI } from '../../interfaces/heading-card-interface';
 import TextInput from '../text-input/text-input';
 
-export default function AnythingElse() {
+export default function AnythingElse({ title, description }: HeadingCardI) {
   return (
     <div className='sharing-with-wrapper'>
       <span>
-        Anything else?
+        { title }
       </span>
 
       <Box mb={2.5} mt={1}>
         <span className='description-class'>
-          Do you want to add anything extra?
+          { description }
         </span>
       </Box>
 
